@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saga – AI-coach för Företagssamma kvinnor</title>
+<title>RUT – AI-coach för Företagssamma kvinnor</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -89,21 +89,21 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 
 <div id="reg">
   <div class="hdr">
-    <div class="logo">S</div>
-    <div><div class="hdr-title">Saga – AI-coach för Företagssamma kvinnor</div><div class="hdr-sub">Halland – Företagssamma kvinnor</div></div>
+    <div class="logo">R</div>
+    <div><div class="hdr-title">RUT – AI-coach för Företagssamma kvinnor</div><div class="hdr-sub">Halland – Företagssamma kvinnor</div></div>
   </div>
   <div class="mob-tip">🖥️ <strong>OBS: Denna prototyp är optimerad för dator.</strong> Den färdiga versionen kommer att fungera på alla enheter.</div>
   <div class="wrap">
     <div class="card">
       <div class="rtitle">Välkommen till nätverket! 🌿</div>
-      <div class="rsub">Alla fält är valfria. Fyll i det du vill dela – ju mer vi vet, desto bättre kan Saga matcha dig med rätt personer.</div>
+      <div class="rsub">Alla fält är valfria. Fyll i det du vill dela – ju mer vi vet, desto bättre kan RUT matcha dig med rätt personer.</div>
       <div class="fld"><label>Ditt namn <span>(valfritt)</span></label><input id="f-namn" placeholder="Anna Andersson"></div>
       <div class="fld"><label>E-post <span>(valfritt)</span></label><input id="f-email" type="email" placeholder="anna@foretag.se"></div>
       <div class="fld"><label>Var i Halland finns du? <span>(valfritt)</span></label><input id="f-ort" placeholder="T.ex. Åsa, Kungsbacka, Halmstad..."></div>
       <div class="fld"><label>Vad erbjuder du? <span>(valfritt – används för matchning)</span></label><textarea id="f-erb" placeholder="T.ex. Jag är redovisningskonsult och hjälper småföretag med bokföring"></textarea></div>
       <div class="fld"><label>Vad söker du just nu? <span>(valfritt)</span></label><textarea id="f-sok" placeholder="T.ex. Söker en marknadsförare att samarbeta med"></textarea></div>
       <div class="gdpr"><input type="checkbox" id="f-gdpr"><label for="f-gdpr">Jag godkänner att mina uppgifter används för matchning inom nätverket Halland – Företagssamma kvinnor, i enlighet med GDPR.</label></div>
-      <button class="go-btn" onclick="startChat()">Kom igång med Saga 🌿</button>
+      <button class="go-btn" onclick="startChat()">Kom igång med RUT 🌿</button>
     </div>
     <div class="tip">💡 Gratis rådgivning upp till 5h: <a href="https://timbanken.se/halland" target="_blank">timbanken.se/halland</a></div>
   </div>
@@ -111,8 +111,8 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 
 <div id="chat">
   <div class="hdr">
-    <div class="logo">S</div>
-    <div><div class="hdr-title">Saga – AI-coach</div><div class="hdr-sub">Halland – Företagssamma kvinnor</div></div>
+    <div class="logo">R</div>
+    <div><div class="hdr-title">RUT – AI-coach</div><div class="hdr-sub">Halland – Företagssamma kvinnor</div></div>
     <button class="net-btn" onclick="openNet()">🌿 Nätverket – exempel</button>
     <div class="dot"></div>
   </div>
@@ -228,8 +228,8 @@ function startChat(){
   document.getElementById('b-namn').textContent=namn||'Välkommen';
   document.getElementById('b-ort').textContent=ort||'Halland';
   var g=namn
-    ?'Hej och varmt välkommen, '+namn+'! 👋\n\nJag är Saga – din AI-coach för projektet "Halland – Företagssamma kvinnor".\n\nJag är här för att bolla affärsfrågor, ekonomi, marknadsföring och allt annat som hör företagandet till – men också för att hjälpa dig att orka och må riktigt bra!\n\nAtt starta och driva företag är fantastiskt roligt men kan också vara ensamt och utmanande. Jag och dina vänner i nätverket finns här för dig. 💛\n\nVad vill du att vi pratar om idag?'
-    :'Hej och varmt välkommen! 👋\n\nJag är Saga – din AI-coach för projektet "Halland – Företagssamma kvinnor".\n\nJag är här för att bolla affärsfrågor, ekonomi, marknadsföring och allt som hör företagandet till. Att driva företag är fantastiskt men kan också vara ensamt. Jag och dina vänner i nätverket finns här! 💛\n\nVad vill du att vi pratar om idag?';
+    ?'Hej och varmt välkommen, '+namn+'! 👋\n\nJag är RUT – din AI-coach för projektet "Halland – Företagssamma kvinnor".\n\nJag är här för att bolla affärsfrågor, ekonomi, marknadsföring och allt annat som hör företagandet till – men också för att hjälpa dig att orka och må riktigt bra!\n\nAtt starta och driva företag är fantastiskt roligt men kan också vara ensamt och utmanande. Jag och dina vänner i nätverket finns här för dig. 💛\n\nVad vill du att vi pratar om idag?'
+    :'Hej och varmt välkommen! 👋\n\nJag är RUT – din AI-coach för projektet "Halland – Företagssamma kvinnor".\n\nJag är här för att bolla affärsfrågor, ekonomi, marknadsföring och allt som hör företagandet till. Att driva företag är fantastiskt men kan också vara ensamt. Jag och dina vänner i nätverket finns här! 💛\n\nVad vill du att vi pratar om idag?';
   addMsg('a',g);
 }
 
@@ -249,7 +249,7 @@ function render(){
     var m=msgs[j];
     var d=document.createElement('div');
     d.className='msg'+(m.r==='u'?' u':'');
-    if(m.r==='a'){d.innerHTML='<div class="av">S</div><div class="bbl">'+m.t.replace(/\n/g,'<br>')+'</div>';}
+    if(m.r==='a'){d.innerHTML='<div class="av">R</div><div class="bbl">'+m.t.replace(/\n/g,'<br>')+'</div>';}
     else{d.innerHTML='<div class="bbl">'+m.t.replace(/\n/g,'<br>')+'</div>';}
     c.insertBefore(d,qw);
   }
@@ -261,7 +261,7 @@ function showTyping(){
   var qw=document.getElementById('qwrap');
   var d=document.createElement('div');
   d.className='msg twrap';
-  d.innerHTML='<div class="av">S</div><div class="bbl"><div class="tdots"><div class="td"></div><div class="td"></div><div class="td"></div></div></div>';
+  d.innerHTML='<div class="av">R</div><div class="bbl"><div class="tdots"><div class="td"></div><div class="td"></div><div class="td"></div></div></div>';
   c.insertBefore(d,qw);
   c.scrollTop=c.scrollHeight;
   return d;
