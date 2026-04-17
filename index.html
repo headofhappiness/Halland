@@ -13,7 +13,7 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 .logo{width:40px;height:40px;background:linear-gradient(135deg,#4a8c4a,#6ab06a);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:bold;color:white;flex-shrink:0;}
 .hdr-title{color:#e8f2e8;font-size:15px;font-weight:500;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
 .hdr-sub{color:#9ab89a;font-size:11px;font-style:italic;}
-.net-btn{margin-left:auto;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:6px 14px;color:#e8f2e8;font-size:12px;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;white-space:nowrap;}
+.net-btn{margin-left:auto;background:linear-gradient(135deg,#e8a020,#f0b830);border:none;border-radius:20px;padding:7px 16px;color:#2E5C2E;font-size:12px;font-weight:600;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;white-space:nowrap;box-shadow:0 2px 8px rgba(232,160,32,0.4);}
 .dot{width:8px;height:8px;border-radius:50%;background:#6dbb8a;flex-shrink:0;}
 /* REG */
 #reg{display:flex;flex-direction:column;align-items:center;}
@@ -58,7 +58,7 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 .chip:hover,.chip:active{background:#3a6b3a;color:#e8f2e8;}
 .cbox.wm .chip{border-color:#c4b49a;color:#6a5a3a;}
 .cbox.wm .chip:hover{background:#f0ece4;}
-.ncta{background:#f2f7f2;border:1.5px solid #c8dcc8;border-radius:12px;padding:12px 16px;font-size:13px;color:#3a6b3a;cursor:pointer;font-family:Georgia,'Times New Roman',serif;text-align:left;width:100%;}
+.ncta{background:linear-gradient(135deg,#e8a020,#f0b830);border:none;border-radius:12px;padding:13px 16px;font-size:13px;color:#2E5C2E;font-weight:600;cursor:pointer;font-family:Georgia,'Times New Roman',serif;text-align:left;width:100%;box-shadow:0 2px 8px rgba(232,160,32,0.3);}
 .ibar{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(transparent,#f0ece4 30%);padding:10px 16px 20px;display:flex;justify-content:center;}
 .iin{width:100%;max-width:720px;display:flex;gap:10px;background:white;border-radius:22px;padding:5px 5px 5px 16px;box-shadow:0 2px 16px rgba(0,0,0,0.1);border:1.5px solid #c8dcc8;}
 .iin textarea{flex:1;border:none;outline:none;resize:none;font-size:16px;font-family:Georgia,'Times New Roman',serif;color:#2a3a2a;background:transparent;padding:8px 0;line-height:1.4;max-height:100px;overflow-y:auto;}
@@ -112,8 +112,11 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 <div id="chat">
   <div class="hdr">
     <div class="logo">R</div>
-    <div><div class="hdr-title">RUT – AI-coach</div><div class="hdr-sub">Halland – Företagssamma kvinnor</div></div>
-    <button class="net-btn" onclick="openNet()">🌿 Nätverket – exempel</button>
+    <div>
+      <div class="hdr-title">RUT – Riktig Utveckling Tillsammans</div>
+      <div class="hdr-sub">Nätverket för företagssamma kvinnor i Halland</div>
+    </div>
+    <button class="net-btn" onclick="openNet()">🌿 Se nätverket</button>
     <div class="dot"></div>
   </div>
   <div class="banner"><span>Inloggad som <strong id="b-namn"></strong> · <span id="b-ort"></span></span><a href="https://timbanken.se/halland" target="_blank">Timbanken ↗</a></div>
@@ -144,7 +147,7 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
             <button class="chip" onclick="sc('Jag behover bolla en affarside')">Jag behöver bolla en idé 💡</button>
           </div>
         </div>
-        <button class="ncta" onclick="openNet()">🌿 Se exempelprofiler från nätverket – så här fungerar matchningen →</button>
+        <button class="ncta" onclick="openNet()">🌿 Se vilka som finns i nätverket – och hur matchningen fungerar →</button>
       </div>
     </div>
   </div>
