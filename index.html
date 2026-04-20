@@ -13,7 +13,9 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 .logo{width:40px;height:40px;background:linear-gradient(135deg,#4a8c4a,#6ab06a);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:bold;color:white;flex-shrink:0;}
 .hdr-title{color:#e8f2e8;font-size:15px;font-weight:500;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
 .hdr-sub{color:#9ab89a;font-size:11px;font-style:italic;}
-.net-btn{margin-left:auto;background:linear-gradient(135deg,#e8a020,#f0b830);border:none;border-radius:20px;padding:7px 16px;color:#2E5C2E;font-size:12px;font-weight:600;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;white-space:nowrap;box-shadow:0 2px 8px rgba(232,160,32,0.4);}
+.timb-btn{margin-left:auto;background:white;border:2px solid #e8a020;border-radius:20px;padding:7px 16px;color:#2E5C2E;font-size:12px;font-weight:600;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;white-space:nowrap;text-decoration:none;display:flex;align-items:center;}
+.timb-btn:hover{background:#fff8e1;}
+.net-btn{margin-left:8px;background:linear-gradient(135deg,#e8a020,#f0b830);border:none;border-radius:20px;padding:7px 16px;color:#2E5C2E;font-size:12px;font-weight:600;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;white-space:nowrap;box-shadow:0 2px 8px rgba(232,160,32,0.4);}
 .dot{width:8px;height:8px;border-radius:50%;background:#6dbb8a;flex-shrink:0;}
 /* REG */
 #reg{display:flex;flex-direction:column;align-items:center;}
@@ -36,7 +38,9 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 .tip{margin-top:14px;background:#f2f7f2;border:1px solid #c8dcc8;border-radius:12px;padding:12px 16px;font-size:13px;color:#3a6b3a;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
 .tip a{color:#4a8c4a;font-weight:600;text-decoration:none;}
 /* CHAT */
-.banner{background:#f2f7f2;border-bottom:1px solid #c8dcc8;padding:8px 20px;font-size:12px;color:#3a6b3a;display:flex;justify-content:space-between;align-items:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+.banner{background:#f2f7f2;border-bottom:1px solid #c8dcc8;padding:8px 20px;font-size:12px;color:#3a6b3a;display:flex;justify-content:space-between;align-items:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;gap:8px;}
+.restart-btn{background:transparent;border:1.5px solid #c8dcc8;border-radius:14px;padding:4px 12px;font-size:11.5px;color:#4a8c4a;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;white-space:nowrap;}
+.restart-btn:hover{background:#e8f2e8;}
 .banner a{color:#4a8c4a;text-decoration:none;font-weight:600;}
 #msgs{width:100%;max-width:720px;margin:0 auto;padding:20px 16px 180px;display:flex;flex-direction:column;gap:16px;}
 .msg{display:flex;gap:10px;align-items:flex-end;}
@@ -116,10 +120,11 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
       <div class="hdr-title">RUT – Riktig Utveckling Tillsammans</div>
       <div class="hdr-sub">Nätverket för företagssamma kvinnor i Halland</div>
     </div>
+    <a href="https://timbanken.se/halland" target="_blank" class="timb-btn">⏱️ Timbanken</a>
     <button class="net-btn" onclick="openNet()">🌿 Se nätverket</button>
     <div class="dot"></div>
   </div>
-  <div class="banner"><span>Inloggad som <strong id="b-namn"></strong> · <span id="b-ort"></span></span><a href="https://timbanken.se/halland" target="_blank">Timbanken ↗</a></div>
+  <div class="banner"><span>Inloggad som <strong id="b-namn"></strong> · <span id="b-ort"></span></span><button class="restart-btn" onclick="resetChat()">↩ Tillbaka till start</button><a href="https://timbanken.se/halland" target="_blank">Timbanken ↗</a></div>
   <div style="width:100%;display:flex;justify-content:center;">
     <div id="msgs">
       <div id="qwrap" style="display:flex;flex-direction:column;gap:12px;">
@@ -169,6 +174,7 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 <div class="npanel" id="npanel">
   <div class="nhdr"><div class="nhdrtitle">Nätverket 🌿</div><button class="ncls" onclick="closeNet()">✕</button></div>
   <div class="nnotice">⚠️ Exempelprofiler – demonstrerar matchningsfunktionen</div>
+  <div class="nnotice" style="background:#fff8e1;border-color:#ffe082;color:#7a6000;">⏱️ Timbankens konsulter och deras kompetens är inte inlagda ännu – de är därför inte sökbara i nuläget.</div>
   <div class="nsrch-w"><input class="nsrch" id="nsrch" placeholder="Sök kompetens eller ort..." oninput="filterNet(this.value)"></div>
   <div class="nlist" id="nlist"></div>
   <div class="nftr" id="nftr"></div>
@@ -222,6 +228,17 @@ function pickR(t){
   if(s.indexOf('foto')>-1||s.indexOf('bild')>-1)return'Maria Karlsson i Halmstad är fotograf med fokus på produkt- och porträttfoto! 📸 Hon finns i nätverket. Vad för bilder behöver du?';
   if(s.indexOf('design')>-1)return'Sara Johansson i Kungsbacka jobbar med webb och grafisk design! 🎨 Hon finns i nätverket. Vad vill du göra?';
   var d=[R.d0,R.d1,R.d2]; var r=d[di%3]; di++; return r;
+}
+
+function resetChat(){
+  msgs=[];waiting=false;di=0;
+  document.getElementById('qwrap').style.display='flex';
+  document.getElementById('msgs').scrollTop=0;
+  var namn=document.getElementById('b-namn').textContent;
+  var g=namn&&namn!=='Välkommen'
+    ?'Hej igen, '+namn+'! 👋\n\nVad vill du att vi pratar om nu?'
+    :'Hej igen! 👋\n\nVad vill du att vi pratar om nu?';
+  addMsg('a',g);
 }
 
 function startChat(){
