@@ -87,6 +87,10 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 .noff{font-size:12.5px;color:#3a5a3a;margin-bottom:3px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
 .nwnt{font-size:12.5px;color:#5a7a5a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
 .nftr{padding:11px 14px;border-top:1px solid #e8f2e8;font-size:12px;color:#9ab89a;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+.timb-section{border-top:2px solid #ffe082;background:#fff8e1;padding:14px 16px;}
+.timb-shdr{font-size:13px;font-weight:600;color:#7a6000;margin-bottom:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+.timb-sbody{font-size:12px;color:#7a6000;line-height:1.6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin-bottom:10px;}
+.timb-slink{display:inline-block;background:#e8a020;color:#fff;border-radius:14px;padding:7px 14px;font-size:12px;font-weight:600;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
 </style>
 </head>
 <body>
@@ -139,7 +143,6 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
             <button class="chip" onclick="sc('Jag jobbar med min hemsida')">Hemsida</button>
             <button class="chip" onclick="sc('Jag jobbar med kundmoten och salj')">Kundmöte &amp; sälj</button>
             <button class="chip" onclick="sc('Jag vill lara mig om AI-verktyg')">AI-verktyg</button>
-            <button class="chip" onclick="sc('Berätta om Timbanken')">Timbanken</button>
           </div>
         </div>
         <div class="cbox wm">
@@ -174,10 +177,14 @@ body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135d
 <div class="npanel" id="npanel">
   <div class="nhdr"><div class="nhdrtitle">Nätverket 🌿</div><button class="ncls" onclick="closeNet()">✕</button></div>
   <div class="nnotice">⚠️ Exempelprofiler – demonstrerar matchningsfunktionen</div>
-  <div class="nnotice" style="background:#fff8e1;border-color:#ffe082;color:#7a6000;">⏱️ Timbankens konsulter och deras kompetens är inte inlagda ännu – de är därför inte sökbara i nuläget.</div>
   <div class="nsrch-w"><input class="nsrch" id="nsrch" placeholder="Sök kompetens eller ort..." oninput="filterNet(this.value)"></div>
   <div class="nlist" id="nlist"></div>
   <div class="nftr" id="nftr"></div>
+  <div class="timb-section">
+    <div class="timb-shdr">⏱️ Gratis rådgivning via Timbanken</div>
+    <div class="timb-sbody">Timbanken erbjuder upp till 5 timmars kostnadsfri rådgivning inom affärsplan, ekonomi, juridik, marknad, HR och IT.<br><br><em>Timbankens konsulter är inte inlagda i nätverket ännu – de visas här när de är på plats.</em></div>
+    <a href="https://timbanken.se/halland" target="_blank" class="timb-slink">Ansök på timbanken.se/halland ↗</a>
+  </div>
 </div>
 
 <script>
@@ -199,9 +206,15 @@ var R={
   salj:"Sälj är att hjälpa rätt person lösa ett problem! 🤝 Struktur: lyssna → förstå behovet → presentera lösning → pris → nästa steg. Vad är din största utmaning i kundmöten?",
   ai:"ChatGPT/Claude för textproduktion och mejlsvar. Canva AI för grafik. Otter.ai för att transkribera möten. 🤖 Tips: ge AI kontext om ditt företag – det gör resultaten mycket bättre. Vilket moment tar mest tid idag?",
   timb:"Timbanken ger upp till 5 timmars gratis rådgivning! 🌟 Områden: affärsplan, ekonomi och juridik, marknad och sälj, HR, IT, hållbarhet. Ansök på timbanken.se/halland. Vilket område känns mest aktuellt?",
-  over:"Det är helt förståeligt – du är inte ensam om känslan! 🌿 Vad är det som känns tyngst just nu?",
-  ens:"Ensamheten är en av de mest underskattade utmaningarna! 🤍 Det är precis därför nätverket finns. Kika i nätverkspanelen – du har kollegor i Halland. Vad saknar du mest?",
-  mot:"Tappet av motivation kommer i perioder för de flesta! ⚡ Vad var det som fick dig att börja med ditt företag?",
+  over:"Att känna sig överväldigad är en signal värd att lyssna på – inte trycka ner. 🌿 Inom Head of Happiness arbetar vi med att förstå vad som verkligen tar energi, och vad som fyller på. Vad är det som känns tyngst just nu?",
+  ens:"Ensamhet som företagare är en av de mest underskattade utmaningarna – och en av de vanligaste. 🤍 Inom Head of Happiness vet vi att gemenskap och att bli sedd är grundläggande för välmående. Det är precis därför nätverket finns. Vad saknar du mest just nu?",
+  mot:"Motivationssvackor hör till företagandet – de flesta upplever dem men få pratar om det. 💛 Inom Head of Happiness arbetar vi med att hitta tillbaka till det som ger energi och mening. Vad var det som fick dig att börja med ditt företag från början?",
+  nere:"Det är modigt att sätta ord på det. 🌿 Inom Head of Happiness tror vi på att möta känslor med nyfikenhet snarare än krav. Har du någon du kan prata med idag – en vän, kollega eller närstående?",
+  stress:"Stress är kroppens sätt att säga att något behöver förändras. 🌱 Inom Head of Happiness arbetar vi med att identifiera stressens källa – inte bara hantera symptomen. Vad tror du triggar stressen mest just nu?",
+  sovd:"Sömn är grunden för allt – beslut, kreativitet och ork. 😴 Inom Head of Happiness vet vi att sömnproblem ofta hänger ihop med tankar som snurrar. Vad brukar hålla dig vaken?",
+  neg:"Negativa tankespiraler är vanliga – och de ljuger ofta. 🌀 Inom Head of Happiness arbetar vi med att öka medvetenheten om tankemönster utan att döma. Vilket är det vanligaste negativa tanken som dyker upp?",
+  energi:"Energi handlar inte bara om sömn – det handlar om vad du fyller dagarna med. ⚡ Inom Head of Happiness tittar vi på balansen mellan påfyllning och tömning. Vad ger dig mest energi just nu?",
+  vilsen:"Att känna sig vilsen är ofta ett tecken på att något behöver omvärderas – inte ett misslyckande. 🧭 Inom Head of Happiness arbetar vi med att hitta riktning genom värderingar och det som känns meningsfullt. Vad längtar du efter just nu?",
   ide:"Jag älskar att bolla idéer! 💡 Berätta vad du funderar på?",
   d0:"Tack för att du delar det! 💛 Vad är den största utmaningen just nu?",
   d1:"Det låter som ett viktigt område! Hur länge har du drivit ditt företag?",
@@ -220,8 +233,14 @@ function pickR(t){
   if(s.indexOf('salj')>-1||s.indexOf('kundmoten')>-1||s.indexOf('kundmöte')>-1)return R.salj;
   if(s.indexOf('ai-verktyg')>-1||s.indexOf('chatgpt')>-1||s.indexOf('ai')>-1)return R.ai;
   if(s.indexOf('timbanken')>-1)return R.timb;
-  if(s.indexOf('överväldigad')>-1||s.indexOf('stressad')>-1)return R.over;
+  if(s.indexOf('överväldigad')>-1||s.indexOf('överväldig')>-1)return R.over;
+  if(s.indexOf('stressad')>-1||s.indexOf('stress')>-1)return R.stress;
+  if(s.indexOf('sover daligt')>-1||s.indexOf('sover dåligt')>-1||s.indexOf('sovd')>-1)return R.sovd;
+  if(s.indexOf('negativa tankar')>-1||s.indexOf('fastnar i')>-1)return R.neg;
+  if(s.indexOf('mer energi')>-1||s.indexOf('energi')>-1)return R.energi;
+  if(s.indexOf('vilsen')>-1)return R.vilsen;
   if(s.indexOf('ensam')>-1)return R.ens;
+  if(s.indexOf('nere')>-1||s.indexOf('nedstamd')>-1||s.indexOf('nedstämd')>-1)return R.nere;
   if(s.indexOf('motivation')>-1||s.indexOf('tappat')>-1)return R.mot;
   if(s.indexOf('ide')>-1||s.indexOf('bolla')>-1)return R.ide;
   if(s.indexOf('redovisning')>-1||s.indexOf('bokforing')>-1)return'Anna Lindstrom i Varberg är redovisningskonsult! 🌿 Kika i nätverkspanelen och kontakta henne. Vad är din specifika fråga?';
